@@ -1,0 +1,66 @@
+<template name = "appBody">
+	<div id = "container"> 
+		
+	 	<div id = "container_navi">					
+			{{> loginButtons}}
+
+
+		    {{#if currentUser}}
+				{{currentUser.username}}
+			{{else}}
+		        {{> register}}
+		        {{> login}}
+		    {{/if}}
+		</div> <!--container_navi-->
+	
+	
+	
+	
+		<div id = "container_social">
+			<canvas id = "myCanvas" width="30" height="300" style="border:1px solid #000000;">
+			</canvas>
+		</div> <!-- _social -->	
+	
+	
+	
+	    <div id = "container_body">		
+			var myPlayer = videojs('testVideo');
+			<video id = "testVideo" class="video-js vjs-default-skin"  controls preload = "auto" width="1280" height="720" daya-setup="{}">		
+			<!-- video 아무거나 일단 넣어보기 -->	
+				<source src = "" type = "">
+					<source src = "" type = "">
+						<p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>	Your browser does not support HTML video.
+			</video>
+	
+			<script src = "http://vjs.zencdn.net/5.8.0/video.js"></script>
+		</div> <!--line 6 div class="container"-->
+
+		<!--Social presence Cue -->	
+		
+	</div> <!-- container -->			
+</template>
+
+
+
+
+<template name="register">
+    <form>
+        <input type="email" name="registerEmail">
+        <input type="password" name="registerPassword">
+        <input type="submit" value="Register">
+    </form>
+</template>
+
+<template name="login">
+    <form>
+        <input type="email" name="loginEmail">
+        <input type="password" name="loginPassword">
+        <input type="submit" value="Login">
+    </form>
+</template>
+
+<template name="dashboard">
+    <p>You're logged in.</p>
+	<!--다시 돌아가는 부분 만들기-->
+    <p><a href="#" class="logout">Logout</a></p>
+</template>
